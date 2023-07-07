@@ -4,33 +4,33 @@ import { Box, Chip, Grid, Link, Typography } from "@mui/material";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import React from "react";
 
-const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 100 },
-  {
-    field: "paid",
-    headerName: "Pagado",
-    description: "Muestra si la orden ya fue pagada o no",
-    width: 200,
-    renderCell: (params:GridValueGetterParams)=>{
-        return (
-            params.row.paid ? <Chip color='success' label='Pagada' variant="outlined"/> : <Chip color='error' label='No pagada' variant="outlined"/>)
-    }
-  },
-  { field: "fullname", headerName: "Nombre Completo", width: 300 },
-  {
-    field: "orden",
-    headerName: "Ver orden",
-    sortable:false,
-    width: 200,
-    renderCell: (params:GridValueGetterParams)=>{
-        return (
-            <NextLink href={`/orders/${params.row.id}`} passHref legacyBehavior>
-                <Link underline='always'>Ver orden</Link>
-            </NextLink>
-        )
-    }
-  },
-];
+// const columns: GridColDef[] = [
+//   { field: "id", headerName: "ID", width: 100 },
+//   {
+//     field: "paid",
+//     headerName: "Pagado",
+//     description: "Muestra si la orden ya fue pagada o no",
+//     width: 200,
+//     renderCell: (params:GridValueGetterParams)=>{
+//         return (
+//             params.row.paid ? <Chip color='success' label='Pagada' variant="outlined"/> : <Chip color='error' label='No pagada' variant="outlined"/>)
+//     }
+//   },
+//   { field: "fullname", headerName: "Nombre Completo", width: 300 },
+//   {
+//     field: "orden",
+//     headerName: "Ver orden",
+//     sortable:false,
+//     width: 200,
+//     renderCell: (params:GridValueGetterParams)=>{
+//         return (
+//             <NextLink href={`/orders/${params.row.id}`} passHref legacyBehavior>
+//                 <Link underline='always'>Ver orden</Link>
+//             </NextLink>
+//         )
+//     }
+//   },
+// ];
 
 const rows = [
   { id: 1, paid: false, fullname: "Andrés Murillo"},
@@ -51,7 +51,7 @@ const HistoryPage = () => {
       </Typography>
       <Grid container>
         <Grid item xs={12} sx={{ height: "650", width: "100%" }}>
-          <DataGrid
+          {/* <DataGrid
             rows={rows}
             columns={columns}
             initialState={{
@@ -60,7 +60,7 @@ const HistoryPage = () => {
               },
             }}
             pageSizeOptions={[5, 10, 25]}
-          />
+          /> */}
         </Grid>
       </Grid>
     </ShopLayout>
